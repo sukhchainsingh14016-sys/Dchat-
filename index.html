@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;background:#000;color:#fff;font-family:sans-serif}
+.top{padding:15px;font-size:26px;color:#D4AF37;font-weight:bold}
+.chat{display:flex;padding:12px;border-bottom:1px solid #222}
+.dp{width:50px;height:50px;border-radius:50%;background:#D4AF37;color:#000;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-right:12px}
+</style>
+</head>
+<body>
+<div class="top">DChat 👑</div>
+<div style="padding:10px;display:flex;gap:8px">
+<input id="n" placeholder="Naam likho" style="flex:1;padding:12px;border-radius:20px;border:none;background:#222;color:#fff">
+<button onclick="add()" style="background:#D4AF37;border:none;padding:10px 15px;border-radius:20px">+ Add</button>
+</div>
+<div id="list">
+<div class="chat"><div class="dp">S</div><div><b>Sukhchain Singh</b><br><small>Hi bro</small></div></div>
+</div>
+<script>
+function add(){
+let v=document.getElementById('n').value;
+if(!v){alert('Naam likho pehla');return}
+let d=document.createElement('div');
+d.className='chat';
+d.innerHTML='<div class=dp>'+v.charAt(0)+'</div><div><b>'+v+'</b><br><small>New chat</small></div>';
+document.getElementById('list').appendChild(d);
+document.getElementById('n').value='';
+alert(v+' add ho gaya!');
+}
+</script>
+</body>
+</html>
